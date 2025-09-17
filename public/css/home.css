@@ -1,0 +1,37 @@
+.home-card {
+    text-align: center;
+}
+
+.home-title {
+    margin: 0 0 8px;
+}
+
+.home-counter {
+    margin: 6px 0 10px;
+}
+
+.home-form {
+    margin: 18px 0;
+}
+
+.home-btn {
+    min-width: 180px;
+}
+
+.home-result {
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.home-result__img {}
+
+.home-result__name {
+    margin: 10px 0 6px;
+    font-size: 22px;
+}
+
+.home-result__rarity {}
+
+.home-empty {
+    opacity: .9;
+}

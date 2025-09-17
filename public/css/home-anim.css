@@ -1,0 +1,189 @@
+/* カードのベース（既存トーンに馴染ませる） */
+.draw-card {
+    position: relative;
+    width: min(520px, 100%);
+    margin: 12px 0;
+    border-radius: 16px;
+    border: 1px solid #223;
+    background: var(--card);
+    color: var(--text);
+    overflow: hidden;
+    transform: translateZ(0);
+}
+
+/* 画像とテキスト */
+.draw-card__img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 320px;
+    background: #0b1020;
+}
+
+.draw-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+}
+
+.draw-card__name {
+    font-size: 1.1rem;
+}
+
+/* 光の帯（URでキラッと） */
+.draw-card__burst,
+.draw-card__sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+/* きらめき（微粒子） */
+.draw-card__sparkles {
+    background:
+        radial-gradient(circle, rgba(255, 255, 255, .9) 0 2px, transparent 3px) 10% 30%/6px 6px no-repeat,
+        radial-gradient(circle, rgba(255, 255, 255, .8) 0 2px, transparent 3px) 70% 20%/6px 6px no-repeat,
+        radial-gradient(circle, rgba(255, 255, 255, .7) 0 2px, transparent 3px) 40% 80%/6px 6px no-repeat,
+        radial-gradient(circle, rgba(255, 255, 255, .6) 0 2px, transparent 3px) 85% 60%/6px 6px no-repeat;
+    opacity: 0;
+}
+
+/* UR：虹色の斜行シャイン＋拡大 */
+.rarity-UR.is-animate .draw-card__burst {
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, .75) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg) translateX(-120%);
+    animation: ur-shine 1.8s ease-out forwards;
+}
+
+@keyframes ur-shine {
+    0% {
+        transform: skewX(-25deg) translateX(-120%);
+        opacity: .9;
+    }
+
+    60% {
+        transform: skewX(-25deg) translateX(120%);
+        opacity: .9;
+    }
+
+    100% {
+        transform: skewX(-25deg) translateX(120%);
+        opacity: 0;
+    }
+}
+
+.rarity-UR.is-animate {
+    animation: ur-pop 600ms ease-out;
+}
+
+@keyframes ur-pop {
+    0% {
+        transform: scale(.98);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.rarity-UR.is-animate .draw-card__sparkles {
+    animation: twinkle 2.2s ease-in-out forwards;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .9;
+    }
+
+    100% {
+        opacity: .15;
+    }
+}
+
+/* SSR：紫がかったグロー */
+.rarity-SSR.is-animate .draw-card__burst {
+    background: radial-gradient(120% 80% at 50% 50%, rgba(200, 120, 255, .35), transparent 60%);
+    animation: pulse 1.2s ease-out 2;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* SR：青グロー、R/Nは控えめ揺らぎ */
+.rarity-SR.is-animate .draw-card__burst {
+    background: radial-gradient(120% 80% at 50% 50%, rgba(110, 168, 255, .25), transparent 60%);
+    animation: pulse 1s ease-out 1;
+}
+
+.rarity-R.is-animate,
+.rarity-N.is-animate {
+    animation: subtle 600ms ease-out;
+}
+
+@keyframes subtle {
+    0% {
+        transform: scale(.995);
+        opacity: .95;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* シェアボタンの余白 */
+.draw-actions {
+    margin-top: 8px;
+}
+
+/* 結果カードとボタンを中央に */
+.home-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ← 子要素を中央寄せ */
+}
+
+/* カード本体を横中央に・幅は既存サイズ感のまま */
+.draw-card {
+    width: min(520px, 100%);
+    margin: 12px auto;
+    /* ← 左右autoで中央 */
+}
+
+/* シェアボタン行も中央に（必要なら右寄せに変更可） */
+.draw-actions {
+    width: min(520px, 100%);
+    margin: 8px auto 0;
+    text-align: center;
+    /* 右寄せにしたいなら 'right' */
+}
+
+/* 画像がインライン扱いでズレないように・100%幅でブロック化 */
+.draw-card__img,
+.home-result__img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,110 @@
+.history-title {
+    margin: 0 0 12px;
+}
+
+.history-grid {}
+
+.history-card {}
+
+.history-card__img {}
+
+.history-card__name {
+    margin: 8px 0 6px;
+    font-size: 18px;
+}
+
+.history-card__rarity {}
+
+.history-card__time {
+    color: var(--sub);
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.history-pagination {
+    margin-top: 16px;
+}
+
+/* ページネーション矢印のサイズ調整 */
+.history-pagination svg {
+    width: 16px;
+    /* デフォルトは 20px → 小さめに */
+    height: 16px;
+}
+
+/* ページネーション全体を横並びに */
+.history-pagination ul.pagination {
+    list-style: none;
+    /* ●を消す */
+    display: flex;
+    /* 横並び */
+    gap: 6px;
+    /* ボタンの間隔 */
+    padding-left: 0;
+    /* 左余白をリセット */
+    justify-content: center;
+    /* 中央寄せにしたい場合 */
+}
+
+/* 各ページ番号の見た目 */
+.history-pagination ul.pagination li {
+    display: inline-block;
+}
+
+.history-pagination ul.pagination li a,
+.history-pagination ul.pagination li span {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--card);
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid #223;
+}
+
+.history-pagination ul.pagination li.active span {
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: bold;
+}
+
+.history-pagination ul.pagination li.disabled span {
+    opacity: 0.5;
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.history-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.history-sort select,
+.history-search input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid #223;
+}
+
+.history-btn {
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.history-clear {
+    margin-left: 6px;
+    color: var(--text);
+    opacity: .8;
+}

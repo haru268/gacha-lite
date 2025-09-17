@@ -1,0 +1,62 @@
+.rarity-badge {
+    padding: 4px 10px;
+    border-radius: 9999px;
+    /* ← 今の状態。角が完全に丸 */
+}
+
+/* URだけキラキラするアニメーション */
+.rarity-UR {
+    background: linear-gradient(135deg, gold, orange);
+    color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.rarity-UR::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.4) 100%);
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+
+    60% {
+        left: 125%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+.rarity-SSR {
+    background: linear-gradient(135deg, purple, violet);
+    color: #fff;
+}
+
+.rarity-SR {
+    background: #3490dc;
+    color: #fff;
+}
+
+.rarity-R {
+    background: #38c172;
+    color: #fff;
+}
+
+.rarity-N {
+    background: #aaa;
+    color: #fff;
+}

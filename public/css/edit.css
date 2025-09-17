@@ -1,0 +1,100 @@
+/* ===== 編集画面 共通カード：元の濃い青に戻す ===== */
+.edit-card {
+    background: var(--card);
+    /* もとの濃い青 (#151c34) */
+    border: 1px solid #223;
+    /* もとの境界線 */
+    border-radius: 14px;
+    padding: 20px;
+    color: var(--text);
+    /* 文字色 (#e8ecff) */
+    margin-bottom: 20px;
+    max-width: 640px;
+}
+
+/* 入力欄（暗色背景で読みやすく） */
+.edit-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #0f1530;
+    color: var(--text);
+    border: 1px solid #334;
+    border-radius: 8px;
+}
+
+/* エラー表示（そのまま強調） */
+.edit-error {
+    background: #a33;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: .9em;
+}
+
+/* 区切り線も暗色トーンで */
+.edit-divider {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #223;
+}
+
+/* ボタン（既存のアクセント色を活かす） */
+.edit-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: var(--accent);
+    /* #6ea8ff */
+    color: var(--accent-ink);
+    /* #081226 */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.edit-btn:hover {
+    filter: brightness(1.05);
+}
+
+/* 戻るボタンのサブスタイル */
+.edit-btn-secondary {
+    background: #334;
+    color: var(--text);
+}
+
+.edit-btn-secondary:hover {
+    filter: brightness(1.08);
+}
+
+/* アップロードボタン領域 */
+.edit-upload-actions {
+    margin-top: 12px;
+}
+
+/* プレビュー */
+.edit-preview-label {
+    margin-top: 20px;
+    color: var(--text);
+}
+
+.edit-preview-img {
+    max-width: 150px;
+    border: 1px solid #334;
+    background: #0b1020;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+/* 保存／戻る（枠外・右下。少し左に寄せる ＝ 150px） */
+.edit-actions {
+    margin-top: 20px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+    padding-right: 150px;
+    /* ← Haruさん調整値 */
+}

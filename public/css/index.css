@@ -1,0 +1,119 @@
+/* 見出し・フラッシュメッセージ */
+.index-title {
+    margin: 0 0 12px;
+    color: var(--text);
+}
+
+.index-flash {
+    display: inline-block;
+    background: #2b8a3e;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: .9em;
+    margin-bottom: 12px;
+}
+
+/* グリッドレイアウト */
+.index-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* カード（濃い青ベース） */
+.index-card {
+    display: flex;
+    gap: 12px;
+    background: var(--card);
+    /* #151c34 */
+    border: 1px solid #223;
+    border-radius: 14px;
+    padding: 14px;
+    color: var(--text);
+}
+
+/* サムネイル画像 */
+.index-thumb {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #334;
+    background: #0b1020;
+}
+
+/* カード本文 */
+.index-body {
+    flex: 1;
+}
+
+.index-name {
+    margin: 4px 0 6px;
+    font-size: 18px;
+    color: var(--text);
+}
+
+.index-meta {
+    margin: 0 0 10px;
+    color: var(--text);
+    font-size: .95em;
+}
+
+
+.index-sep {
+    opacity: .6;
+    margin: 0 6px;
+}
+
+.index-weight {
+    opacity: .9;
+}
+
+/* アクション */
+.index-actions {
+    text-align: right;
+}
+
+.index-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: var(--accent);
+    /* #6ea8ff */
+    color: var(--accent-ink);
+    /* #081226 */
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.index-btn:hover {
+    filter: brightness(1.05);
+}
+
+/* ページネーション */
+.index-pagination {
+    margin-top: 16px;
+}
+
+.index-header {
+    display: flex;
+    justify-content: space-between;
+    /* 左：見出し, 右：ソート */
+    align-items: center;
+    margin-bottom:12px;
+}
+
+.index-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.index-sort select {
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid #223;
+}
