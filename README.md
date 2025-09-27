@@ -26,6 +26,24 @@ API 化した Laravel バックエンドと、Next.js フロントエンドで�
 
 ---
 
+## 📌 開発用URL一覧（ローカル環境）
+
+> まず Laravel サーバーを起動してください。  
+> APP_URL（例: `http://127.0.0.1:8000`）＋下記のパスでアクセスできます。
+
+- トップページ（ガチャ） → `/`
+- 履歴 → `/history`
+- 図鑑 → `/catalog`
+- ランキング → `/ranking`
+- 管理：アイテム一覧 → `/admin/items`
+- 管理：新規アイテム作成 → `/admin/items/create`
+- 管理：レア度倍率（バランス調整） → `/admin/balance`
+- 管理：履歴CSVエクスポート → `/admin/history/export`
+- ユーザー名設定 → `/name`
+
+---
+
+
 ## 📦 セットアップ
 
 ### 1. Laravel (バックエンド)
